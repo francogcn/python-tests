@@ -8,6 +8,7 @@ if len(sys.argv) > 1:
     adress = ' '.join(sys.argv[1:])
     webbrowser.open('https://www.google.com/maps/place/'+adress)
 else:
-    print("No adress")
+    print('No adress')
+
 
 

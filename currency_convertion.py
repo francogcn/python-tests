@@ -1,5 +1,4 @@
 #! python3
-
 #Importacion de modulos
 from dolarhoy import DolarHoy
 
@@ -13,4 +12,6 @@ cotizacion = dolar_hoy.get_oficial_price()
 moneda = int(input("Ingrese el monto en pesos: "))
 
 #Se imprime el monto convertido
-print(f"AR ${moneda} son U$D {moneda/cotizacion['venta']}")
+print(f"Dolar Oficial (venta): {cotizacion['venta']}")
+print("----------------------------------------")
+print(f"AR ${moneda} son U$D {round(moneda/cotizacion['venta'],2)}")

@@ -1,3 +1,6 @@
+##This script downloads the Romeo and Juliet text from the Gutenberg Project page
+##and stores it as a txt file in your local machine.
+
 #Import required modules
 import requests
 #Downloads content from the Gutenberg Project

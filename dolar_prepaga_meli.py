@@ -10,7 +10,7 @@ res = requests.get("https://www.mercadopago.com.ar/cards/commons/dollar-exchange
 res.raise_for_status()
 # Parses the content if the request succeeds
 soup = bs4.BeautifulSoup(res.text, "html.parser")
-mep_dolar = soup.select('.andes-money-amount')
+debit_dolar = soup.select('.andes-money-amount')
 #Prints the results for MEP Dolar
-for dolar in mep_dolar:
+for dolar in debit_dolar:
   print(dolar.getText())

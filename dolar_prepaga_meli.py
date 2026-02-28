@@ -6,7 +6,7 @@ headers = {
 }
 #Send HTTP request
 res = requests.get("https://www.mercadopago.com.ar/cards/commons/dollar-exchange", headers=headers)
-#Program halts if doonload fails
+#Program halts if download fails
 res.raise_for_status()
 # Parses the content if the request succeeds
 soup = bs4.BeautifulSoup(res.text, "html.parser")

@@ -1,3 +1,6 @@
+#This script moves the mouse Randomly On Screen within a determined area
+#pip install pyautogui
+#Import Required modules
 import pyautogui
 import time
 import random 
@@ -18,4 +21,5 @@ try:
 except pyautogui.FailSafeException:
     print("Script terminated by user (mouse moved to corner).")
 except KeyboardInterrupt:
+
     print("Script terminated by user (Ctrl+C).")

@@ -14,11 +14,13 @@
 #Be sure to catch any exceptions like ValueError or ZeroDivisionError
 
 print("***Fuel Gauge***")
-fraction = input("Please indicate a fraction (X/Y):")
-while x <0 or y <= x or y == 0:
+def askFraction():
   fraction = input("Please indicate a fraction (X/Y):")
-for i in range(len(fraction)):
-  if fraction[i] == "/":
-    x = int(fraction[0:i])
-    y = int(fraction[i+1:len(fraction)])
+  for i in range(len(fraction)):
+    if fraction[i] == "/":
+      x = int(fraction[0:i])
+      y = int(fraction[i+1:len(fraction)])
+askFraction()
 
+while x <0 or y <= x or y == 0:
+  askFraction()

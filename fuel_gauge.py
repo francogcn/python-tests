@@ -21,7 +21,11 @@ def askFraction():
       x = int(fraction[0:i])
       y = int(fraction[i+1:len(fraction)])
       return x,y
-[x,y] = askFraction()
 
-while x <0 or y <= x or y == 0:
+def main():
   [x,y] = askFraction()
+
+  while x <0 or y <= x or y == 0:
+    [x,y] = askFraction()
+
+main()

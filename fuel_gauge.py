@@ -27,5 +27,5 @@ def main():
 
   while x <0 or y <= x or y == 0:
     [x,y] = askFraction()
-
+  print(x/y*100)
 main()

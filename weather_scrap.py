@@ -1,5 +1,5 @@
 import requests, bs4
-#Download content from weather.com for city 'Posadas, Misiones' or 'Wanda, Misiones'
+#Download content from weather.com for the cities 'Posadas, Misiones' or 'Wanda, Misiones'
 
 ubi = input("Ingrese la ubicacion: ")
 ubi = ubi.lower().strip()

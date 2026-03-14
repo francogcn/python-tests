@@ -6,4 +6,4 @@ Projects include:
 * File handling
 * Backend development
 ## Currently:
-> Practising with "automate the boring stuff with python"
+> Practising with "Automate the Boring Stuff with Python"

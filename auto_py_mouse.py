@@ -13,7 +13,7 @@ try:
         y = random.randint(200, 800)
 
         # Move to the random coordinates with a short duration
-        pyautogui.moveTo(x, y, duration=0.25)
+        pyautogui.moveTo(x, y, duration=0.26)
         pyautogui.click(x,y)
         pyautogui.vscroll(-15)
         # Wait for 15 seconds before the next move

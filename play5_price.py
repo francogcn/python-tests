@@ -34,5 +34,7 @@ if nombre_producto == 'Sony Playstation 5 Consola Slim Standard + Juego Astro Bo
 
 #Shows error message in case is not the right product
 else:
+  found_url =data['recommendation_info']['polycards'][1]['metadata']['url']
   print("Product not found")
   print(f'Found "{nombre_producto}" instead')
+  print(f'URL: {found_url}'

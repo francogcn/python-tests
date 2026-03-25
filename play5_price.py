@@ -12,29 +12,29 @@ req = requests.get(url, headers=HEADERS)
 data = req.json()
 
 #Gets the product name from the JSON
-nombre_producto= data['recommendation_info']['polycards'][1]['components'][0]['title']['text']
+recomendaciones = data['recommendation_info']['polycards']
 #Checks if the product is the requested PS5
-if nombre_producto == 'Sony Playstation 5 Consola Slim Standard + Juego Astro Bot Y Gt7 Blanco':
-  previous_price = data['recommendation_info']['polycards'][1]['components'][1]['price']['previous_price']['value']
-  current_price = data['recommendation_info']['polycards'][1]['components'][1]['price']['current_price']['value']
-  print(nombre_producto)
-  print('Previous price: AR$', previous_price)
-  print('Current price: AR$', current_price)
-  #Get current timestamp
-  now = datetime.datetime.now()
-  now = now.strftime("%Y-%m-%d %H:%M:%S")
+for recomendacion in recomendaciones:
+  title = recomendacion['components'][0]['title']['text'].lower()
+  if 'sony playstation 5' in title or 'consola' in title:
+    previous_price = recomendacion['components'][1]['price']['previous_price']['value']
+    current_price = recomendacion['components'][1]['price']['current_price']['value']
+    print(title)
+    print('Previous price: AR$', previous_price)
+    print('Current price: AR$', current_price)
+    #Get current timestamp
+    now = datetime.datetime.now()
+    now = now.strftime("%Y-%m-%d %H:%M:%S")
 
-  #Save as CSV
-  price_list = [now, previous_price, current_price]
-  with open('price_list.csv', 'w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerow(price_list)
+    #Save as CSV
+    price_list = [now, previous_price, current_price]
+    with open('price_list.csv', 'w', newline='') as file:
+      writer = csv.writer(file)
+      writer.writerow(price_list)
     print("CSV saved")
 
 
 #Shows error message in case is not the right product
-else:
-  found_url =data['recommendation_info']['polycards'][1]['metadata']['url']
-  print("Product not found")
-  print(f'Found "{nombre_producto}" instead')
-  print(f'URL: {found_url}'
+  else:
+    print("Product not found")
+    

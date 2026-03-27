@@ -22,7 +22,7 @@ feels_like = soup.select('.TodayDetailsCard--feelsLikeTempValue--8WgHV')
 #If elements are found, prints message with current temperature and what it feels like
 if len(temperature) > 0 and len(feels_like) > 0:
   print(f"Temperature in {ubi.capitalize()} is {temperature[0].getText()}C")
-  print(f"Feels like: {feels_like[0].getText()}C")
+  print(f"Feels like: {feels_like[0].getText()}°C")
   print("Source: weather.com")
 else:
   print("Search failed")
